@@ -7,9 +7,8 @@
 //para evitar poner "std::"" tan frecuente
 using namespace std;
 
-// -----------------------------
+
 // ESTRUCTURA CARTA
-// -----------------------------
 struct Carta {
     char palo;        // 'C' Corazones, 'E' Espadas, 'D' Diamantes, 'T' Tréboles
     int categoria;    // 1..13 (1=A, 11=J, 12=Q, 13=K)
@@ -17,9 +16,8 @@ struct Carta {
     bool entregada;   // true si ya fue entregada o jugada
 };
 
-// -----------------------------
+
 // ABB (Árbol Binario de Búsqueda)
-// -----------------------------
 struct NodoABB {
     Carta carta;
     NodoABB* izq;
@@ -83,9 +81,8 @@ public:
     int size() { return nElems; }
 };
 
-// -----------------------------
+
 // LISTA ENLAZADA SIMPLE
-// -----------------------------
 struct NodoL {
     Carta carta;
     NodoL* sig;
@@ -185,9 +182,8 @@ public:
     }
 };
 
-// -----------------------------
+
 // UTILIDADES (palos, valores, construir mazo)
-// -----------------------------
 char paloDeIndice(int i) {
     if (i==0) return 'C';
     if (i==1) return 'E';
@@ -235,9 +231,7 @@ void construirArbolesPorPalo(ABB palos[4]) {
     }
 }
 
-// -----------------------------
 // EVALUACIÓN DE MANOS y PUNTAJES
-// -----------------------------
 struct Resultado {
     int tipo;   // 1..7 (1=carta mas alta ... 7=poker)
     int puntos;
@@ -340,9 +334,7 @@ Resultado evaluarMano(Carta seleccion[], int k) {
     return res;
 }
 
-// -----------------------------
 // MOSTRAR AYUDA
-// -----------------------------
 void mostrarAyuda() {
     cout << "Comandos:\n";
     cout << "  J k i1 i2 ... ik   -> Jugar k cartas (k<=5). Ej: J 5 0 1 2 3 4\n";
@@ -352,9 +344,8 @@ void mostrarAyuda() {
     cout << "  Q                   -> Salir\n";
 }
 
-// -----------------------------
+
 // FUNCIÓN PRINCIPAL (Bucle de juego)
-// -----------------------------
 int main() {
     srand((unsigned)time(NULL));
     cout << "Balatro - Tarea 2 (versión completa en español)\n";
