@@ -1,0 +1,10 @@
+
+## Instrucciones de Compilación
+
+1. Guarda todos los archivos en la misma carpeta
+2. Abre terminal en esa carpeta
+3. Ejecuta: `make`
+4. Para ejecutar: `make run` o `./balatro`
+5. Para limpiar: `make clean`
+
+El juego implementa todas las estructuras requeridas usando las clases vistas, sin algoritmos de ordenamiento complejos como Bubble Sort o Fisher-Yates.

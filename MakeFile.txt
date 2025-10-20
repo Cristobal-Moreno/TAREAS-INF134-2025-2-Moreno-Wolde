@@ -1,0 +1,27 @@
+# Makefile para Tarea 2 
+# Compilador y banderas
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++11 -O2
+TARGET = balatro
+OBJS = main.o
+
+# Regla principal
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+# Regla para archivos objeto
+main.o: main.cpp JuegoBalatro.h ListaEnlazada.h ArbolBinarioBusqueda.h Carta.h
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+# Regla para limpiar archivos compilados
+clean:
+	rm -f $(TARGET) $(OBJS)
+
+# Regla para ejecutar
+run: $(TARGET)
+	./$(TARGET)
+
+# Regla para compilar y ejecutar
+all: $(TARGET) run
+
+.PHONY: clean run all
