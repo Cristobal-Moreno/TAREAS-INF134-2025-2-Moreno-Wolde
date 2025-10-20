@@ -1,8 +1,10 @@
 
+//bibleotecas a usar
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 
+//para evitar poner "std::"" tan frecuente
 using namespace std;
 
 // -----------------------------
